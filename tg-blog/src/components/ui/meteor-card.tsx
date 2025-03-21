@@ -1,7 +1,7 @@
 ;'use client'
 import { Meteors } from '@/components/ui/meteors';
-import { Confetti, ConfettiButton, type ConfettiRef } from "@/components/magicui/confetti";
-import { useRef, useState } from 'react';
+import { ConfettiButton} from "@/components/magicui/confetti";
+import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { BorderBeam } from '../magicui/border-beam';
 
