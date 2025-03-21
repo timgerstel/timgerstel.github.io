@@ -9,7 +9,7 @@ const {
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
 export default {
-	darkMode: ['selector', '[data-theme="dark"]'],
+	darkMode: ['selector', '[data-theme="dark"]', 'class'],
 	content: [
 			"./src/**/*.{js,ts,jsx,tsx,mdx}",
 			"./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -19,51 +19,73 @@ export default {
   ],
   theme: {
   	extend: {
-			animation: {
-        "meteor-effect": "meteor 5s linear infinite",
-      },
-      keyframes: {
-        meteor: {
-          "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
-          "70%": { opacity: "1" },
-          "100%": {
-            transform: "rotate(215deg) translateX(-500px)",
-            opacity: "0",
-          },
-        },
-      },
-			colors: {
-				primaryDark: '#a0aec0',
-				main: 'var(--main)',
-				overlay: 'var(--overlay)',
-				bg: 'var(--bg)',
-				bw: 'var(--bw)',
-				blank: 'var(--blank)',
-				text: 'var(--text)',
-				mtext: 'var(--mtext)',
-				border: 'var(--border)',
-				ring: 'var(--ring)',
-				ringOffset: 'var(--ring-offset)',
-				
-				secondaryBlack: '#212121', 
-			},
-			borderRadius: {
-				base: '5px'
-			},
-			boxShadow: {
-				shadow: 'var(--shadow)'
-			},
-			translate: {
-				boxShadowX: '4px',
-				boxShadowY: '4px',
-				reverseBoxShadowX: '-4px',
-				reverseBoxShadowY: '-4px',
-			},
-			fontWeight: {
-				base: '500',
-				heading: '700',
-			},
-		},
+  		animation: {
+  			'meteor-effect': 'meteor 5s linear infinite',
+  			marquee: 'marquee var(--duration) infinite linear',
+  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite'
+  		},
+  		keyframes: {
+  			meteor: {
+  				'0%': {
+  					transform: 'rotate(215deg) translateX(0)',
+  					opacity: '1'
+  				},
+  				'70%': {
+  					opacity: '1'
+  				},
+  				'100%': {
+  					transform: 'rotate(215deg) translateX(-500px)',
+  					opacity: '0'
+  				}
+  			},
+  			marquee: {
+  				from: {
+  					transform: 'translateX(0)'
+  				},
+  				to: {
+  					transform: 'translateX(calc(-100% - var(--gap)))'
+  				}
+  			},
+  			'marquee-vertical': {
+  				from: {
+  					transform: 'translateY(0)'
+  				},
+  				to: {
+  					transform: 'translateY(calc(-100% - var(--gap)))'
+  				}
+  			}
+  		},
+  		colors: {
+  			primaryDark: '#a0aec0',
+  			main: 'var(--main)',
+  			overlay: 'var(--overlay)',
+  			bg: 'var(--bg)',
+  			bw: 'var(--bw)',
+  			blank: 'var(--blank)',
+  			text: 'var(--text)',
+  			mtext: 'var(--mtext)',
+  			border: 'var(--border)',
+  			ring: 'var(--ring)',
+  			ringOffset: 'var(--ring-offset)',
+  			secondaryBlack: '#212121'
+  		},
+  		borderRadius: {
+  			base: '5px'
+  		},
+  		boxShadow: {
+  			shadow: 'var(--shadow)'
+  		},
+  		translate: {
+  			boxShadowX: '4px',
+  			boxShadowY: '4px',
+  			reverseBoxShadowX: '-4px',
+  			reverseBoxShadowY: '-4px'
+  		},
+  		fontWeight: {
+  			base: '500',
+  			heading: '700'
+  		}
+  	}
   },
   plugins: [require("tailwindcss-animate"), require('@tailwindcss/typography'), addVariablesForColors, bgPlugin, plugin(function({ matchUtilities, theme }: {matchUtilities: any, theme: any}) {
 		matchUtilities(
