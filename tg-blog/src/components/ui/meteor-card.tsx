@@ -1,4 +1,4 @@
-;'use client'
+'use client'
 import { Meteors } from '@/components/ui/meteors';
 import { ConfettiButton} from "@/components/magicui/confetti";
 import { useState } from 'react';
