@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Change Directory
-        run: cd ${{ github.workspace }}/tg-blog
+        run: ls && cd ${{ github.workspace }}/tg-blog
       - name: Checkout
         uses: actions/checkout@v4
       - name: Detect package manager
