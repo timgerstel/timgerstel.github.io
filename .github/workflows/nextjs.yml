@@ -90,14 +90,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: ./tg-blog
     needs: build
     steps:
       - name: Change Directory
-        run: cd ${{ github.workspace }}/tg-blog
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
