@@ -25,7 +25,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useState } from "react"
 
-import { ArrowBigRight, ArrowBigLeft } from "lucide-react"
+import { ArrowBigRight, ArrowBigLeft, Search } from "lucide-react"
 
 
 interface DataTableProps<TData, TValue> {
@@ -70,6 +70,7 @@ export function DataTable<TData, TValue>({
     <div className="w-full p-2.5">
       <div className="flex flex-row justify-between">
         <div className="flex items-center py-4">
+        <Search className="absolute ml-2" />
         <Input
             placeholder="Search posts..."
             value={globalFilter ?? ""}
@@ -77,7 +78,7 @@ export function DataTable<TData, TValue>({
               table.setGlobalFilter(String(event.target.value))
             }
             className="max-w-sm border-slate-200 dark:border-[#111014] bg-white dark:bg-[#1c1b22]
-            hover:border-slate-300 dark:hover:border-slate-700 focus-visible:ring-2 focus-visible:ring-slate-300 dark:focus-visible:ring-slate-700 w-40 sm:w-96"
+            hover:border-slate-300 dark:hover:border-slate-700 focus-visible:ring-2 focus-visible:ring-slate-300 dark:focus-visible:ring-slate-700 w-40 sm:w-96 pl-10"
           />
           
           {/* <Input
