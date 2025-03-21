@@ -1,5 +1,9 @@
-import { ConfettiButton } from "@/components/magicui/confetti";
+;'use client'
 import { Meteors } from '@/components/ui/meteors';
+import { Confetti, ConfettiButton, type ConfettiRef } from "@/components/magicui/confetti";
+import { useRef, useState } from 'react';
+import { cn } from '@/lib/utils';
+import { BorderBeam } from '../magicui/border-beam';
 
 export default function MeteorCard(props: any){
   return (
@@ -20,8 +24,57 @@ export default function MeteorCard(props: any){
   
             {/* Meaty part - Meteor effect */}
             <Meteors number={20} />
+            <BorderBeam
+              duration={20}
+              size={150}
+              delay={Math.random() * 10}
+              className="from-transparent via-yellow-500 to-transparent"
+            /> 
           </div>
       </div>
     </div>
   )
 }
+
+export const IconCard = ({
+  img,
+  label,
+}: {
+  img: string;
+  label: string;
+}) => {
+  const [showBeam, setBeam] = useState(false);
+  return (
+    <div className="relative overflow-hidden" onMouseEnter={() => setBeam(true)} onMouseLeave={() => setBeam(false)}>
+      <div className="flex flex-col justify-center items-center">
+        <figure
+          className={cn(
+            "relative h-full w-20 cursor-pointer overflow-hidden rounded-xl border p-4",
+            // light styles
+            "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
+            // dark styles
+            "dark:border-gray-50/[.1] dark:bg-gray-50/[.01] dark:hover:bg-gray-50/[.05]",
+          )}
+        >
+          
+          <div className="flex flex-row items-center justify-center gap-2">
+            <img className="rounded-full" width="32" height="32" alt="" src={img} />
+          </div>
+
+          {showBeam && <BorderBeam
+            duration={6}
+            size={75}
+            className="from-transparent via-blue-500 to-transparent"
+          />}
+            {showBeam && <BorderBeam
+            duration={6}
+            size={75}
+            delay={3}
+            className="from-transparent via-orange-500 to-transparent"
+          />}
+        </figure>
+        <span className='text-sm py-1'>{label}</span>
+      </div>
+    </div>
+  );
+};

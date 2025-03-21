@@ -97,11 +97,13 @@ export const Illustration = ({ mouseEnter = false }: { mouseEnter?: boolean }) =
             {mouseEnter && <Glow delay={staticDelay} />}
             <AnimatePresence mode="wait">
               {/* Static generation hack lmao trust me this didnt work when doing variable substitution for the bg and shadow color (blue, sky, teal, etc).*/}
-              {isGlowing && <Glow delay={delay} className={((Math.floor(Math.random() * 2)) ) == 0 ? `absolute left-1/2 -translate-x-1/2 z-10 h-[4px] w-[4px] rounded-full
-            bg-blue-500 blur-[2px] shadow-2xl shadow-blue-400` : (Math.floor(Math.random() * 2)) == 0  ? `absolute left-1/2 -translate-x-1/2 z-10 h-[4px] w-[4px] rounded-full
-            bg-sky-500 blur-[2px] shadow-2xl shadow-sky-400` : (Math.floor(Math.random() * 2)) == 0  ? `absolute left-1/2 -translate-x-1/2 z-10 h-[4px] w-[4px] rounded-full
-            bg-pink-500 blur-[2px] shadow-2xl shadow-pink-400` : `absolute left-1/2 -translate-x-1/2 z-10 h-[4px] w-[4px] rounded-full
-            bg-cyan-500 blur-[2px] shadow-2xl shadow-cyan-400`}/>}
+              {isGlowing && <Glow delay={delay} className={((Math.floor(Math.random() * 2)) ) == 0 ? `absolute left-1/2 -translate-x-1/2 z-10 h-[5px] w-[5px] rounded-full
+            bg-blue-500 blur-[2px] shadow-2xl shadow-blue-400` : (Math.floor(Math.random() * 2)) == 0  ? `absolute left-1/2 -translate-x-1/2 z-10 h-[5px] w-[5px] rounded-full
+            bg-amber-100 blur-[2px] shadow-2xl shadow-amber-200` : (Math.floor(Math.random() * 2)) == 0  ? `absolute left-1/2 -translate-x-1/2 z-10 h-[5px] w-[5px] rounded-full
+            bg-slate-100 blur-[2px] shadow-2xl shadow-slate-200` : (Math.floor(Math.random() * 2)) == 0  ? `absolute left-1/2 -translate-x-1/2 z-10 h-[5px] w-[5px] rounded-full
+            bg-sky-100 blur-[2px] shadow-2xl shadow-sky-200` : (Math.floor(Math.random() * 2)) == 0  ? `absolute left-1/2 -translate-x-1/2 z-10 h-[5px] w-[5px] rounded-full
+            bg-zinc-100 blur-[2px] shadow-2xl shadow-zinc-200` : `absolute left-1/2 -translate-x-1/2 z-10 h-[5px] w-[5px] rounded-full
+            bg-rose-400 blur-[2px] shadow-2xl shadow-rose-500`}/>}
             </AnimatePresence>
           </div>
         );
@@ -132,7 +134,7 @@ const Star = ({ isGlowing, delay }: { isGlowing: boolean; delay: number }) => {
 };
  
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const Glow = ({ delay, color="blue", className=`absolute left-1/2 -translate-x-1/2 z-10 h-[4px] w-[4px] rounded-full
+const Glow = ({ delay, color="blue", className=`absolute left-1/2 -translate-x-1/2 z-10 h-[8px] w-[8px] rounded-full
       bg-blue-500 blur-[2px] shadow-2xl shadow-blue-400` }: { delay: number, color?: string, className?: string }) => {
   return (
     <motion.div
@@ -140,7 +142,7 @@ const Glow = ({ delay, color="blue", className=`absolute left-1/2 -translate-x-1
         opacity: 0,
       }}
       animate={{
-        opacity: 1,
+        opacity: Math.min(1, Math.random() * (1 - 0.3) + 0.3),
       }}
       transition={{
         duration: 6,
