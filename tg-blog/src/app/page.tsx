@@ -70,7 +70,7 @@ export default async function Home() {
           </div>
 
             {/* [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_55%,transparent_90%)]  */}
-          <div className="absolute top-[1000px] flex w-[calc(100vw-144px)]
+          <div className="absolute top-[1000px] flex w-[calc(100vw-64px)] md:w-[calc(100vw-144px)]
             ml-5 md:ml-96
             mr-5 md:mr-96
             flex-col items-center overflow-hidden ">
@@ -80,9 +80,9 @@ export default async function Home() {
                 ml-5 md:ml-64
                 mr-5 md:mr-64
                 flex flex-col items-center justify-center gap-12
-               [mask-image:linear-gradient(90deg,transparent_30%,rgba(0,0,0,1)_45%,rgba(0,0,0,1)_55%,transparent_70%)] 
+               [mask-image:linear-gradient(90deg,transparent_35%,rgba(0,0,0,1)_45%,rgba(0,0,0,1)_55%,transparent_65%)] 
                 ">
-              <Marquee pauseOnHover className="[--duration:20s]">
+              <Marquee className="[--duration:20s]">
                 <IconCard img="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" label="React"/>
                 <IconCard img="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg" label="Angular"/>
                 <IconCard img="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" label="TypeScript"/>
@@ -91,16 +91,21 @@ export default async function Home() {
                 <IconCard img="https://img.icons8.com/?size=100&id=hsPbhkOH4FMe&format=png&color=000000" label="Node.js"/>
                 <IconCard img="https://img.icons8.com/?size=100&id=kg46nzoJrmTR&format=png&color=000000" label="Express.js"/>
                 <IconCard img="https://img.icons8.com/?size=100&id=sOWbK4N3cxGh&format=png&color=000000" label="Webpack"/>
+                <IconCard img="https://img.icons8.com/?size=100&id=4PiNHtUJVbLs&format=png&color=000000" label="Tailwind CSS"/>
+                <IconCard img="https://img.icons8.com/?size=100&id=24465&format=png&color=000000" label="Swift"/>
               </Marquee>
-              <Marquee reverse pauseOnHover className="[--duration:20s]">
+              <Marquee reverse className="[--duration:20s]">
                 <IconCard img="https://upload.wikimedia.org/wikipedia/commons/a/ab/Official_CSS_Logo.svg" label="CSS" />
                 <IconCard img="https://upload.wikimedia.org/wikipedia/commons/3/35/The_C_Programming_Language_logo.svg" label="C"/>
+                <IconCard img="https://img.icons8.com/?size=100&id=10250&format=png&color=000000" label="bash"/>
                 <IconCard img="https://img.icons8.com/?size=100&id=13679&format=png&color=000000" label="Java"/>
                 <IconCard img="https://img.icons8.com/?size=100&id=13441&format=png&color=000000" label="Python"/>
                 <IconCard img="https://img.icons8.com/?size=100&id=b1T0BJuTPGAz&format=png&color=000000" label="Electron"/>
                 <IconCard img="https://img.icons8.com/?size=100&id=24662&format=png&color=000000" label="REXX"/>
                 <IconCard img="https://img.icons8.com/?size=100&id=24662&format=png&color=000000" label="JCL"/>
                 <IconCard img="https://img.icons8.com/?size=100&id=106550&format=png&color=000000" label="BlackDuck"/>
+                <IconCard img="https://avatars.githubusercontent.com/u/139895814?s=200&v=4" label="shadcn/ui"/>
+                
               </Marquee>
               <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
               <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
