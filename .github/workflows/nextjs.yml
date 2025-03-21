@@ -30,10 +30,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Change Directory
-        run: ls && cd ${{ github.workspace }}/tg-blog
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Change Directory
+        run: cd ${{ github.workspace }}/tg-blog
       - name: Detect package manager
         id: detect-package-manager
         run: |
