@@ -82,7 +82,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ github.workspace }}/tg-blog/./out
+          path: ${{ github.workspace }}/tg-blog/out
 
   # Deployment job
   deploy:
