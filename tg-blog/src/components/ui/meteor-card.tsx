@@ -4,7 +4,6 @@ import { ConfettiButton} from "@/components/magicui/confetti";
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { BorderBeam } from '../magicui/border-beam';
-import { FlickeringGrid } from '../magicui/flickering-grid';
 
 export default function MeteorCard(props: any){
   return (
