@@ -4,6 +4,7 @@ import { ConfettiButton} from "@/components/magicui/confetti";
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { BorderBeam } from '../magicui/border-beam';
+import { FlickeringGrid } from '../magicui/flickering-grid';
 
 export default function MeteorCard(props: any){
   return (
@@ -51,14 +52,14 @@ export const IconCard = ({
           className={cn(
             "relative h-full w-20 cursor-pointer overflow-hidden rounded-xl border p-4",
             // light styles
-            "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
+            "border-gray-950/[.1] bg-white/[.6] hover:bg-gray-100/[.6]",
             // dark styles
-            "dark:border-gray-50/[.1] dark:bg-gray-50/[.01] dark:hover:bg-gray-50/[.05]",
+            "dark:border-gray-50/[.1] dark:bg-gray-600/[.5] dark:hover:bg-gray-500/[.5]",
           )}
         >
           
-          <div className="flex flex-row items-center justify-center gap-2">
-            <img className="rounded-full" width="32" height="32" alt="" src={img} />
+          <div className="flex flex-row items-center justify-center gap-2 z-20">
+            <img className="rounded-full z-20" width="32" height="32" alt="" src={img} />
           </div>
 
           {showBeam && <BorderBeam
@@ -73,7 +74,7 @@ export const IconCard = ({
             className="from-transparent via-orange-500 to-transparent"
           />}
         </figure>
-        <span className='text-sm py-1'>{label}</span>
+        <span className='text-sm py-1 font-semibold'>{label}</span>
       </div>
     </div>
   );

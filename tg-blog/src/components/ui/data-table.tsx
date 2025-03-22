@@ -25,7 +25,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useState } from "react"
 
-import { ArrowBigRight, ArrowBigLeft, Search } from "lucide-react"
+import { ChevronLeft, ChevronRight, Search } from "lucide-react"
 
 
 interface DataTableProps<TData, TValue> {
@@ -97,7 +97,7 @@ export function DataTable<TData, TValue>({
               onClick={() => table.previousPage()}
               disabled={!table.getCanPreviousPage()}
             >
-              <ArrowBigLeft />
+              <ChevronLeft />
             </Button>
             <span className="text-sm">{Number(pagination.pageIndex + (table.getPageCount() > 0 ? 1 : 0))}/{table.getPageCount()}</span>
             <Button
@@ -106,7 +106,7 @@ export function DataTable<TData, TValue>({
               onClick={() => table.nextPage()}
               disabled={!table.getCanNextPage()}
             >
-              <ArrowBigRight />
+              <ChevronRight />
             </Button>
           </div>
         </div>

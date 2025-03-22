@@ -37,7 +37,7 @@ export const GlowingStarsBackground = ({
  
 export const Illustration = ({ mouseEnter = false }: { mouseEnter?: boolean }) => {
   const [width, setWidth] = useState<number>(0);
-  const SMALL_SCREEN=768, MIN_STARS=360, MAX_STARS=1152, MAX_COLS=36, MIN_COLS=12;
+  const SMALL_SCREEN=768, MIN_STARS=360, MAX_STARS=1088, MAX_COLS=36, MIN_COLS=12;
 
   //add a lot of stars after 2k screen resolution but make the ternary look janky😎
   const [stars, setStars] = useState(MAX_STARS);

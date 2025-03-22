@@ -8,6 +8,7 @@ import { HardHat, Construction } from 'lucide-react';
 import { GlowingStarsBackground } from '@/components/ui/glowing-star-bg';
 import MeteorCard, { IconCard } from '@/components/ui/meteor-card';
 import { Marquee } from '@/components/magicui/marquee';
+import { FlickeringGrid } from '@/components/magicui/flickering-grid';
 
 
 
@@ -63,7 +64,7 @@ export default async function Home() {
             ml-5 md:ml-96
             mr-5 md:mr-96
             flex-col items-center overflow-hidden ">
-              <span className="text-3xl font-extrabold mb-8">Full stack.</span>
+              <span className="text-3xl font-extrabold mb-32">Full stack.</span>
             <div className="bg-transparent
                 h-[350px]
                 ml-5 md:ml-64
@@ -72,7 +73,7 @@ export default async function Home() {
                 [mask-image:linear-gradient(90deg,transparent_45%,rgba(0,0,0,1)_50%,rgba(0,0,0,1)_51%,transparent_55%)] 
                md:[mask-image:linear-gradient(90deg,transparent_35%,rgba(0,0,0,1)_45%,rgba(0,0,0,1)_55%,transparent_65%)] 
                 ">
-              <Marquee className="[--duration:30s]">
+              <Marquee className="[--duration:50s]">
                 <IconCard img="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" label="React"/>
                 <IconCard img="https://img.icons8.com/?size=100&id=yUdJlcKanVbh&format=png&color=000000" label="Next.js"/>
                 <IconCard img="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg" label="Angular"/>
@@ -87,7 +88,7 @@ export default async function Home() {
                 <IconCard img="https://img.icons8.com/?size=100&id=24662&format=png&color=000000" label="REXX"/>
                 <IconCard img="https://img.icons8.com/?size=100&id=24662&format=png&color=000000" label="JCL"/>
               </Marquee>
-              <Marquee reverse className="[--duration:30s]">
+              <Marquee reverse className="[--duration:50s]">
               <IconCard img="https://img.icons8.com/?size=100&id=hsPbhkOH4FMe&format=png&color=000000" label="Node.js"/>
                 <IconCard img="https://img.icons8.com/?size=100&id=kg46nzoJrmTR&format=png&color=000000" label="Express.js"/>
                 <IconCard img="https://img.icons8.com/?size=100&id=sOWbK4N3cxGh&format=png&color=000000" label="Webpack"/>
@@ -103,15 +104,25 @@ export default async function Home() {
                 <IconCard img="https://img.icons8.com/?size=100&id=25643&format=png&color=000000" label="L3 Support"/>
               </Marquee>
               <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
-              <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
+              <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>    
+              <FlickeringGrid
+                className="absolute inset-0 -z-10 size-full mt-32 [mask-image:linear-gradient(90deg,transparent_5%,rgba(0,0,0,1)_45%,rgba(0,0,0,1)_55%,transparent_95%)] "
+                squareSize={6}
+                gridGap={4}
+                color="#818999"
+                maxOpacity={0.3}
+                flickerChance={0.2}
+                height={400}
+                width={2200}
+              />
             </div>
           </div>
 
 
 
-          <div className="h-[1700px] lg:h-[950px] absolute w-full top-[1600px]
+          <div className="h-[1600px] lg:h-[750px] absolute w-full top-[1825px]
             overflow-hidden z-0 [mask-image:radial-gradient(ellipse_at_center,black_69%,transparent_85%)]">
-            <GlowingStarsBackground className="h-[1700px] lg:h-[950px] top-[1600px]
+            <GlowingStarsBackground className="h-[1600px] lg:h-[750px] top-[1825px]
               ml-5 md:ml-16
               mr-5 md:mr-16
               bg-transparent
@@ -119,8 +130,8 @@ export default async function Home() {
 
           </div>
           
-          <div className="flex flex-col items-center absolute top-[1700px] z-10">
-            <h1 className="text-3xl font-extrabold mb-10">Loved by peers.</h1>
+          <div className="flex flex-col items-center absolute top-[1675px] z-10">
+            <h1 className="text-3xl font-extrabold mb-40">Loved by peers.</h1>
             <div className="flex flex-col lg:flex-row">
               <div className="flex flex-col lg:pt-16 px-5">
                 <MeteorCard title="Architect" desc="Did someone give Stevie Wonder a regular computer keyboard?" />
